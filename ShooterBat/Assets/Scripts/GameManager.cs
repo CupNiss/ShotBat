@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class GameManager : MonoBehaviour
     public float spwanRate;
 
     bool gameStarted = false;
-   
+
+    public GameObject tapText;
+    public Text scoreText;
+
+    int score = 0;
 
     void Update()
     {
@@ -19,6 +24,7 @@ public class GameManager : MonoBehaviour
             StartSpawning();
 
             gameStarted = true;
+            tapText.SetActive(false);
         }
     }
 
@@ -34,5 +40,8 @@ public class GameManager : MonoBehaviour
         spawnPos.x = Random.Range(-limitX, limitX);
 
         Instantiate(bat, spawnPos, Quaternion.identity);
+
+        score++;
+        scoreText.text = score.ToString();
     }
 }
