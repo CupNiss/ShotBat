@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  limitX: 1.868041
 --- !u!58 &570712382
 CircleCollider2D:
   m_ObjectHideFlags: 0
